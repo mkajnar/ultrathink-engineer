@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1706" width="1280" height="1706" role="img" aria-labelledby="t d">
+<title id="t">ultrathink-engineer: how it works</title>
+<desc id="d">A request is framed into acceptance criteria, triaged into tier S, M or L by complexity and risk, worked through a loop from understand to stop, verified, and reported. Stalled work follows an anti-stagnation protocol; blocked work stops with a stop report. Token economy applies throughout.</desc>
+<defs><marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#59636e"/></marker></defs>
+<rect x="0" y="0" width="1280" height="1706" rx="18" fill="#ffffff"/>
+<rect x="1" y="1" width="1278" height="1704" rx="17" fill="none" stroke="#d0d7de" stroke-width="2"/>
+<text xml:space="preserve" x="40" y="58" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1f2328" text-anchor="start">ultrathink-engineer</text>
+<text xml:space="preserve" x="40" y="88" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="normal" fill="#59636e" text-anchor="start">senior engineering mode for Claude Code</text>
+<text xml:space="preserve" x="40" y="114" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="normal" fill="#59636e" text-anchor="start">Evidence over intuition: frame the task, triage by risk, find the root cause, prove the fix, report what was measured.</text>
+<text xml:space="preserve" x="40" y="166" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#8c959f" text-anchor="start">1</text>
+<text xml:space="preserve" x="68" y="166" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2328" text-anchor="start">From request to report</text>
+<line x1="40" y1="176" x2="1240" y2="176" stroke="#d8dee4" stroke-width="1"/>
+<rect x="40" y="190" width="380" height="158" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="56" y="217" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2328" text-anchor="start">Request</text>
+<circle cx="396" cy="214" r="13" fill="#6e7781"/>
+<text xml:space="preserve" x="396" y="219" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text xml:space="preserve" x="56" y="246.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">non-trivial bug, refactor, design decision,</text>
+<text xml:space="preserve" x="56" y="264.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">perf or reliability work, or correctness matters</text>
+<text xml:space="preserve" x="56" y="283.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">skipped for trivial edits and simple facts</text>
+<text xml:space="preserve" x="56" y="301.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">bias to action: every request is valid,</text>
+<text xml:space="preserve" x="56" y="320.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">real risks go under Remaining Risks</text>
+<rect x="450" y="190" width="380" height="158" rx="10" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.5"/>
+<text xml:space="preserve" x="466" y="217" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0550ae" text-anchor="start">§0  Frame</text>
+<circle cx="806" cy="214" r="13" fill="#54aeff"/>
+<text xml:space="preserve" x="806" y="219" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text xml:space="preserve" x="466" y="246.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">1–3 checkable acceptance criteria</text>
+<text xml:space="preserve" x="466" y="264.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">ambiguity: resolve from code and context first</text>
+<text xml:space="preserve" x="466" y="283.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">else: reasonable default, stated as assumption</text>
+<text xml:space="preserve" x="466" y="301.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">ask only if a wrong guess costs more than asking</text>
+<text xml:space="preserve" x="466" y="320.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">user &gt; CLAUDE.md &gt; project conventions &gt; skill</text>
+<rect x="860" y="190" width="380" height="158" rx="10" fill="#fbefff" stroke="#c297ff" stroke-width="1.5"/>
+<text xml:space="preserve" x="876" y="217" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#6639ba" text-anchor="start">§0  Triage</text>
+<circle cx="1216" cy="214" r="13" fill="#c297ff"/>
+<text xml:space="preserve" x="1216" y="219" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text xml:space="preserve" x="876" y="246.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">tier = max(complexity, risk)</text>
+<text xml:space="preserve" x="876" y="264.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">risk = blast radius × irreversibility</text>
+<text xml:space="preserve" x="876" y="283.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">production, data, security, money, public API:</text>
+<text xml:space="preserve" x="876" y="301.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">at least L-grade verification, even for one line</text>
+<text xml:space="preserve" x="876" y="320.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">destructive or irreversible: confirm first</text>
+<rect x="40" y="380" width="380" height="158" rx="10" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.5"/>
+<text xml:space="preserve" x="56" y="407" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#116329" text-anchor="start">Work, by tier</text>
+<circle cx="396" cy="404" r="13" fill="#4ac26b"/>
+<text xml:space="preserve" x="396" y="409" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<rect x="56" y="423" width="20" height="18" rx="4" fill="#4ac26b"/>
+<text xml:space="preserve" x="66" y="437" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">S</text>
+<text xml:space="preserve" x="86" y="436" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">do → verify → stop</text>
+<rect x="56" y="442" width="20" height="18" rx="4" fill="#d4a72c"/>
+<text xml:space="preserve" x="66" y="456" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">M</text>
+<text xml:space="preserve" x="86" y="455" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">inspect briefly → change → focused test</text>
+<rect x="56" y="461" width="20" height="18" rx="4" fill="#cf222e"/>
+<text xml:space="preserve" x="66" y="475" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">L</text>
+<text xml:space="preserve" x="86" y="474" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">full loop (§2), alternatives, before/after</text>
+<text xml:space="preserve" x="56" y="499" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">escalate the tier when evidence shows hidden complexity</text>
+<text xml:space="preserve" x="56" y="518" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">never run L ceremony on S work</text>
+<rect x="450" y="380" width="380" height="158" rx="10" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.5"/>
+<text xml:space="preserve" x="466" y="407" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#7d4e00" text-anchor="start">§4  Done = verified</text>
+<circle cx="806" cy="404" r="13" fill="#d4a72c"/>
+<text xml:space="preserve" x="806" y="409" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<text xml:space="preserve" x="466" y="436.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">strongest practical proof: focused test → regression</text>
+<text xml:space="preserve" x="466" y="454.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">→ integration → runtime → logs/metrics → inspection</text>
+<text xml:space="preserve" x="466" y="473.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">bug: reproduce → fix → failure gone → rest intact</text>
+<text xml:space="preserve" x="466" y="491.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">refactor/perf: differential check, old vs new</text>
+<text xml:space="preserve" x="466" y="510.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">self-attack, then simplify; stalled or blocked: exits ↓</text>
+<rect x="860" y="380" width="380" height="158" rx="10" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.5"/>
+<text xml:space="preserve" x="876" y="407" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0550ae" text-anchor="start">§5  Report</text>
+<circle cx="1216" cy="404" r="13" fill="#54aeff"/>
+<text xml:space="preserve" x="1216" y="409" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<text xml:space="preserve" x="876" y="436.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">lead with the result</text>
+<text xml:space="preserve" x="876" y="454.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">Result · Root Cause · Verification · Impact · Risks</text>
+<text xml:space="preserve" x="876" y="473.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">mark every claim: measured/tested, inferred, assumed</text>
+<text xml:space="preserve" x="876" y="491.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">out-of-scope findings: one line each, not fixed</text>
+<text xml:space="preserve" x="876" y="510.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">length scales with the tier</text>
+<line x1="423" y1="269" x2="447" y2="269" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<line x1="833" y1="269" x2="857" y2="269" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<path d="M1050.0,351 V364 H230.0 V376" fill="none" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<line x1="423" y1="459" x2="447" y2="459" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<line x1="833" y1="459" x2="857" y2="459" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<text xml:space="preserve" x="40" y="612" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#8c959f" text-anchor="start">2</text>
+<text xml:space="preserve" x="68" y="612" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2328" text-anchor="start">The loop (§2): tier L in full, S and M use the relevant subset</text>
+<line x1="40" y1="622" x2="1240" y2="622" stroke="#d8dee4" stroke-width="1"/>
+<rect x="40.0" y="646" width="92" height="42" rx="9" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.5"/>
+<text xml:space="preserve" x="86.0" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#0550ae" text-anchor="middle">UNDERSTAND</text>
+<rect x="150.8" y="646" width="92" height="42" rx="9" fill="#ddf4ff" stroke="#54aeff" stroke-width="1.5"/>
+<text xml:space="preserve" x="196.8" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#0550ae" text-anchor="middle">OBSERVE</text>
+<line x1="134.0" y1="667" x2="148.8" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="261.6" y="646" width="92" height="42" rx="9" fill="#fbefff" stroke="#c297ff" stroke-width="1.5"/>
+<text xml:space="preserve" x="307.6" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#6639ba" text-anchor="middle">HYPOTHESIZE</text>
+<line x1="244.8" y1="667" x2="259.6" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="372.4" y="646" width="92" height="42" rx="9" fill="#fbefff" stroke="#c297ff" stroke-width="1.5"/>
+<text xml:space="preserve" x="418.4" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#6639ba" text-anchor="middle">PLAN</text>
+<line x1="355.59999999999997" y1="667" x2="370.4" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="483.2" y="646" width="92" height="42" rx="9" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.5"/>
+<text xml:space="preserve" x="529.2" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#116329" text-anchor="middle">IMPLEMENT</text>
+<line x1="466.4" y1="667" x2="481.2" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="594.0" y="646" width="92" height="42" rx="9" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.5"/>
+<text xml:space="preserve" x="640.0" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#116329" text-anchor="middle">TEST</text>
+<line x1="577.2" y1="667" x2="592.0" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="704.8" y="646" width="92" height="42" rx="9" fill="#dafbe1" stroke="#4ac26b" stroke-width="1.5"/>
+<text xml:space="preserve" x="750.8" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#116329" text-anchor="middle">MEASURE</text>
+<line x1="688.0" y1="667" x2="702.8" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="815.6" y="646" width="92" height="42" rx="9" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.5"/>
+<text xml:space="preserve" x="861.6" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7d4e00" text-anchor="middle">CRITIQUE</text>
+<line x1="798.8000000000001" y1="667" x2="813.6" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="926.4" y="646" width="92" height="42" rx="9" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.5"/>
+<text xml:space="preserve" x="972.4" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7d4e00" text-anchor="middle">SIMPLIFY</text>
+<line x1="909.6" y1="667" x2="924.4" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="1037.2" y="646" width="92" height="42" rx="9" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.5"/>
+<text xml:space="preserve" x="1083.1999999999998" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#7d4e00" text-anchor="middle">VERIFY</text>
+<line x1="1020.3999999999999" y1="667" x2="1035.1999999999998" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<rect x="1148.0" y="646" width="92" height="42" rx="9" fill="#ffebe9" stroke="#ff8182" stroke-width="1.5"/>
+<text xml:space="preserve" x="1194.0" y="672" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#a40e26" text-anchor="middle">STOP</text>
+<line x1="1131.2" y1="667" x2="1146.0" y2="667" stroke="#59636e" stroke-width="2" marker-end="url(#head)"/>
+<path d="M1083.2,691 V714 H307.6 V694" fill="none" stroke="#59636e" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
+<text xml:space="preserve" x="695.3999999999999" y="734" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#59636e" text-anchor="middle" font-style="italic">repeat only when new evidence justifies it, never because “more might be possible”</text>
+<text xml:space="preserve" x="40" y="772" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">PLAN: goal, state, evidence, cause, options, trade-offs, choice, verification, pre-mortem (“how will this fail?”)</text>
+<text xml:space="preserve" x="40" y="796" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">root cause chain: symptom → mechanism → root cause → minimal corrective change → verification</text>
+<text xml:space="preserve" x="40" y="820" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">rank hypotheses, test the cheapest, highest-information one first;</text>
+<text xml:space="preserve" x="40" y="838" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">write the predicted outcome before each experiment and prefer a test that could refute it</text>
+<text xml:space="preserve" x="40" y="902" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#8c959f" text-anchor="start">3</text>
+<text xml:space="preserve" x="68" y="902" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2328" text-anchor="start">Principles (§1)</text>
+<line x1="40" y1="912" x2="1240" y2="912" stroke="#d8dee4" stroke-width="1"/>
+<rect x="40.0" y="928" width="290" height="100" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="54.0" y="952" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2328" text-anchor="start">First principles</text>
+<text xml:space="preserve" x="54.0" y="974" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">what actually fails? cause or</text>
+<text xml:space="preserve" x="54.0" y="991" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">symptom? which assumptions</text>
+<text xml:space="preserve" x="54.0" y="1008" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">are still unverified?</text>
+<rect x="343.33" y="928" width="290" height="100" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="357.33" y="952" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2328" text-anchor="start">Understand before modifying</text>
+<text xml:space="preserve" x="357.33" y="974" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">inspect what the change touches;</text>
+<text xml:space="preserve" x="357.33" y="991" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">discover the architecture,</text>
+<text xml:space="preserve" x="357.33" y="1008" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">never invent it</text>
+<rect x="646.66" y="928" width="290" height="100" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="660.66" y="952" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2328" text-anchor="start">Evidence over intuition</text>
+<text xml:space="preserve" x="660.66" y="974" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">code, tests, logs, traces, runtime</text>
+<text xml:space="preserve" x="660.66" y="991" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">state; contradicted? change the</text>
+<text xml:space="preserve" x="660.66" y="1008" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">hypothesis, not the excuse</text>
+<rect x="949.99" y="928" width="290" height="100" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="963.99" y="952" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2328" text-anchor="start">Root cause</text>
+<text xml:space="preserve" x="963.99" y="974" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">rank hypotheses, test the cheapest</text>
+<text xml:space="preserve" x="963.99" y="991" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">first; don&#x27;t change code only</text>
+<text xml:space="preserve" x="963.99" y="1008" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">because it looks suspicious</text>
+<rect x="40.0" y="1040" width="290" height="100" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="54.0" y="1064" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2328" text-anchor="start">Fix the class</text>
+<text xml:space="preserve" x="54.0" y="1086" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">after the cause, search for the same</text>
+<text xml:space="preserve" x="54.0" y="1103" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">pattern elsewhere; fix or report</text>
+<text xml:space="preserve" x="54.0" y="1120" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">each occurrence</text>
+<rect x="343.33" y="1040" width="290" height="100" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="357.33" y="1064" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2328" text-anchor="start">Alternatives (L)</text>
+<text xml:space="preserve" x="357.33" y="1086" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">compare realistic options and say</text>
+<text xml:space="preserve" x="357.33" y="1103" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">why the chosen one beats them;</text>
+<text xml:space="preserve" x="357.33" y="1120" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">don&#x27;t claim it is the only one</text>
+<rect x="646.66" y="1040" width="290" height="100" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="660.66" y="1064" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2328" text-anchor="start">Smallest sufficient change</text>
+<text xml:space="preserve" x="660.66" y="1086" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">no unrelated refactors, premature</text>
+<text xml:space="preserve" x="660.66" y="1103" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">abstraction or new dependencies</text>
+<text xml:space="preserve" x="660.66" y="1120" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">when existing ones suffice</text>
+<rect x="949.99" y="1040" width="290" height="100" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="963.99" y="1064" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2328" text-anchor="start">Craft</text>
+<text xml:space="preserve" x="963.99" y="1086" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">readable, idiomatic, testable;</text>
+<text xml:space="preserve" x="963.99" y="1103" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">handle real edge cases,</text>
+<text xml:space="preserve" x="963.99" y="1120" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#1f2328" text-anchor="start">not speculative ones</text>
+<text xml:space="preserve" x="40" y="1190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#8c959f" text-anchor="start">4</text>
+<text xml:space="preserve" x="68" y="1190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2328" text-anchor="start">Verification and exits (§4)</text>
+<line x1="40" y1="1200" x2="1240" y2="1200" stroke="#d8dee4" stroke-width="1"/>
+<rect x="40" y="1216" width="380" height="275" rx="10" fill="#fff8c5" stroke="#d4a72c" stroke-width="1.5"/>
+<text xml:space="preserve" x="56" y="1243" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#7d4e00" text-anchor="start">Done = verified</text>
+<text xml:space="preserve" x="56" y="1272.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">bug: reproduce → fix → prove the failure</text>
+<text xml:space="preserve" x="56" y="1290.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">is gone → prove the rest is intact</text>
+<text xml:space="preserve" x="56" y="1309.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">a regression test must fail on the old</text>
+<text xml:space="preserve" x="56" y="1327.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">code and pass on the new one</text>
+<text xml:space="preserve" x="56" y="1346.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">refactor/perf: differential check, old vs</text>
+<text xml:space="preserve" x="56" y="1364.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">new, on random and edge inputs</text>
+<text xml:space="preserve" x="56" y="1383.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">perf/reliability/ops: BEFORE → AFTER,</text>
+<text xml:space="preserve" x="56" y="1401.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">≥3 runs, median + spread; within the</text>
+<text xml:space="preserve" x="56" y="1420.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">spread it is noise (measurement.md)</text>
+<text xml:space="preserve" x="56" y="1438.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">self-attack: wrong assumption? race,</text>
+<text xml:space="preserve" x="56" y="1457.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">timeout, restart, bad data, load?</text>
+<rect x="450" y="1216" width="380" height="275" rx="10" fill="#fbefff" stroke="#c297ff" stroke-width="1.5"/>
+<text xml:space="preserve" x="466" y="1243" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#6639ba" text-anchor="start">Stalled?  anti-stagnation.md</text>
+<text xml:space="preserve" x="466" y="1272.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">same failure repeats, no new information,</text>
+<text xml:space="preserve" x="466" y="1290.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">the symptom just moves</text>
+<text xml:space="preserve" x="466" y="1309.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">1  stop the current approach</text>
+<text xml:space="preserve" x="466" y="1327.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">2  summarize the known evidence</text>
+<text xml:space="preserve" x="466" y="1346.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">3  name the strongest unverified assumption</text>
+<text xml:space="preserve" x="466" y="1364.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">4  generate substantially different hypotheses</text>
+<text xml:space="preserve" x="466" y="1383.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">5  select the highest information-gain experiment</text>
+<text xml:space="preserve" x="466" y="1401.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">6  continue from the new evidence</text>
+<text xml:space="preserve" x="466" y="1420.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">change strategy, not syntax</text>
+<text xml:space="preserve" x="466" y="1438.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">improvise safely; remove diagnostics after</text>
+<rect x="860" y="1216" width="380" height="275" rx="10" fill="#ffebe9" stroke="#ff8182" stroke-width="1.5"/>
+<text xml:space="preserve" x="876" y="1243" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#a40e26" text-anchor="start">Brake  stop-report.md</text>
+<text xml:space="preserve" x="876" y="1272.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">stop and report when it needs a major</text>
+<text xml:space="preserve" x="876" y="1290.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">architecture decision, broader authorization,</text>
+<text xml:space="preserve" x="876" y="1309.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">a destructive or irreversible action, missing</text>
+<text xml:space="preserve" x="876" y="1327.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">information; or several different approaches</text>
+<text xml:space="preserve" x="876" y="1346.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">failed, or the cost becomes disproportionate</text>
+<text xml:space="preserve" x="876" y="1364.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start">ask first before an unbounded investigation</text>
+<text xml:space="preserve" x="876" y="1383.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1f2328" text-anchor="start"></text>
+<text xml:space="preserve" x="876" y="1401.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11.5" font-weight="bold" fill="#a40e26" text-anchor="start">CURRENT STATE · EVIDENCE · ATTEMPTS</text>
+<text xml:space="preserve" x="876" y="1420.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11.5" font-weight="bold" fill="#a40e26" text-anchor="start">ROOT CAUSE / BEST HYPOTHESIS</text>
+<text xml:space="preserve" x="876" y="1438.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="11.5" font-weight="bold" fill="#a40e26" text-anchor="start">REMAINING OPTIONS · RECOMMENDED NEXT STEP</text>
+<text xml:space="preserve" x="40" y="1540" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#8c959f" text-anchor="start">5</text>
+<text xml:space="preserve" x="68" y="1540" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2328" text-anchor="start">Always on: token economy (§3)</text>
+<line x1="40" y1="1550" x2="1240" y2="1550" stroke="#d8dee4" stroke-width="1"/>
+<rect x="40" y="1566" width="162" height="62" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="52" y="1592" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2328" text-anchor="start">tools by</text>
+<text xml:space="preserve" x="52" y="1611" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59636e" text-anchor="start">information gain</text>
+<rect x="213" y="1566" width="162" height="62" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="225" y="1592" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2328" text-anchor="start">locate, then read</text>
+<text xml:space="preserve" x="225" y="1611" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59636e" text-anchor="start">(grep first, ranges)</text>
+<rect x="386" y="1566" width="162" height="62" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="398" y="1592" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2328" text-anchor="start">delegate noise to</text>
+<text xml:space="preserve" x="398" y="1611" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59636e" text-anchor="start">subagents</text>
+<rect x="559" y="1566" width="162" height="62" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="571" y="1592" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2328" text-anchor="start">batch independent</text>
+<text xml:space="preserve" x="571" y="1611" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59636e" text-anchor="start">tool calls</text>
+<rect x="732" y="1566" width="162" height="62" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="744" y="1592" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2328" text-anchor="start">edit surgically,</text>
+<text xml:space="preserve" x="744" y="1611" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59636e" text-anchor="start">no full rewrites</text>
+<rect x="905" y="1566" width="162" height="62" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="917" y="1592" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2328" text-anchor="start">output = conclusions</text>
+<text xml:space="preserve" x="917" y="1611" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59636e" text-anchor="start">+ evidence (file:line)</text>
+<rect x="1078" y="1566" width="162" height="62" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.5"/>
+<text xml:space="preserve" x="1090" y="1592" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1f2328" text-anchor="start">stop at Done,</text>
+<text xml:space="preserve" x="1090" y="1611" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#59636e" text-anchor="start">no extra polishing</text>
+<text xml:space="preserve" x="40" y="1668" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12" font-weight="normal" fill="#59636e" text-anchor="start">SKILL.md · references/measurement.md · references/anti-stagnation.md · references/stop-report.md</text>
+<text xml:space="preserve" x="40" y="1690" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#59636e" text-anchor="start" font-style="italic">Understand deeply. Measure reality. Solve root causes. Simplify ruthlessly. Stop when it is actually solved.</text>
+</svg>
